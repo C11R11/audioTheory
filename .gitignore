@@ -1,0 +1,8 @@
+/libsoundio-1.1.0/*
+/portaudio/*
+*.exe
+*.dll
+*.a
+*.so
+*.libsoundio
+*_min
