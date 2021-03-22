@@ -1,8 +1,9 @@
 //from https://stackoverflow.com/questions/17217829/sending-sine-wave-values-from-array-to-audio-output
 //for raspberry problem linking math library run add the lm to add the math library
 //  gcc -Wall sin_wave_stackOverflow.cc -lasound -o wave2 -lm
+//in order to make work iostream is needed to use g++
 
-
+#include <iostream>
 #include <alsa/asoundlib.h>
 #include <alsa/pcm.h>
 #include <math.h>
@@ -20,6 +21,9 @@ int main(void)
 
     int f = 30;                //frequency
     int fs = 48000;             //sampling frequency
+
+    std::cout << "Freq: "; // no flush needed
+    std::cin >> f;
 
     snd_pcm_t *handle;
     snd_pcm_sframes_t frames;
